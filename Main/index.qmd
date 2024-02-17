@@ -10,6 +10,7 @@ title: Prasanna Paithankar
   }
   /* also shift everything to left 10 px from left edge of screen*/
   a {
+    color: #007bff;
     text-decoration: none;
   }
 </style>

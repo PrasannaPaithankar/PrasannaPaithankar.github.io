@@ -2,12 +2,20 @@ project:
   type: website
 
 website:
-  title: "Main"
+  title: "Prasanna Paithankar"
+  search: true
   navbar:
     left:
       - href: index.qmd
         text: Home
-      - about.qmd
+      - Research.qmd
+      - Projects.qmd
+      - Misc.qmd
+      - href: Assets/Resume_Prasanna_Paithankar.pdf
+        icon: bi-filetype-pdf
+        text: CV
+      - icon: github
+        href: https://github.com/PrasannaPaithankar/
 
 format:
   html:
