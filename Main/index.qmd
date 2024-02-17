@@ -1,0 +1,42 @@
+---
+title: Prasanna Paithankar
+---
+
+
+<!-- html code to text justify -->
+<style>
+  p {
+    text-align: justify;
+  }
+  /* also shift everything to left 10 px from left edge of screen*/
+  a {
+    text-decoration: none;
+  }
+</style>
+<!-- insert image -->
+<!-- center align -->
+<img src="Assets/CoPAQ-cropped.jpg" alt="Prasanna Paithankar" style="display: block; margin-left: auto; margin-right: auto; width: 20%; border-radius: 50%;">
+
+I am currently a junior undergraduate at Indian Institute of Technology Kharagpur, pursuing a BTech+MTech in Computer Science and Technology.
+
+My general research interests lie in field of photonic based computation, pseudorandomness and statistical learning theory. I am an undergraduate researcher at Fiber Optics and Nano and Quantum Photonics Group (FONQP), Advanced Photonics Laboratory (APL), IIT Kharagpur, under the guidance of [Professor Shailendra Varshney](https://scholar.google.co.in/citations?user=7KsrPeEAAAAJ&hl=en).
+
+I also make financial softwares and scripts for aiding Chartered Accountants and Tax professionals and one would find me either swimming at TSG pool or in APL.
+<!-- Inset a small divder line -->
+<hr>
+
+### News
+[10/10/23] FiO + LS 2023 Conference: Manuscript titled "Femtosecond Laser based Post-Processing Free True Random Number Generator" has been present at FiO+LS 2023 conference at Tacoma, Washington.
+
+[30/06/23] IJPAP Revew Article: Review article titled "Microring Resonators and its Applications" has been published in Indian Journal of Pure and Applied Physics (IJPAP) Vol.61(07).
+
+<hr>
+
+### Contact
+Address: Department of Computer Science and Engineering, Indian Institute of Technology Kharagpur, West Bengal (721302), India.
+
+Email: <a href="mailto:paithankarprasanna@gmail.com">paithankarprasanna@gmail.com</a>
+
+<hr>
+<div style="font-size: 12px; color: grey; text-align: right; ">
+Prasanna Paithankar | Deptarment of Computer Science & Engineering | Indian Insitute of Technology Kharagpur<br>Made using [Quarto](https://quarto.org/) </div>

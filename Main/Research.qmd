@@ -1,0 +1,44 @@
+---
+title: "Research"
+---
+<style>
+  p {
+    text-align: justify;
+  }
+
+  a {
+    /* color: #007bff; */
+    text-decoration: none;
+  }
+</style>
+<hr>
+
+#### FiO+LS 2023, Washington, USA
+### Femtosecond Laser based Post-Processing Free True Random Number Generator
+Amritash Sharma <sup>&dagger;</sup>, Prasanna Paithankar <sup>&dagger;</sup>, Shailendra K Varshney
+
+Abstract: We experimentally demonstrate a high-entropy source based on the intensity fluctuation in a femtosecond laser. The setup successfully passes statistical tests without any post-processing. The generator can be potentially used for quantum communication and cryptography.<br>
+[<i class="bi bi-easel2"></i> Poster](Assets/JTu5A.57-1.pdf)\ \ |\ \ [<i class="bi bi-card-heading"></i> Abstract](Assets/FiO_RNG_Abstract.pdf)\ \ |\ \ [<i class="bi bi-file-earmark-plus"></i> Supplementary](FiO.qmd)
+
+<hr>
+
+#### Indian Journal of Pure & Applied Physics (IJPAP)
+### Microring Resonators and its Applications
+Sauradeep Kar, Sridhar Singhal, Prasanna Paithankar & Shailendra K Varshney
+
+Abstract: Microring resonators (MRRs) are the most sought on-chip optical components after the optical waveguides due to versatile usages and functionalities whether in linear or nonlinear and quantum properties. A simple MRR geometry consists of one or two straight waveguides and circular or bent waveguides. Due to huge potential and versatility, we provide a comprehensive review on microring resonators that encompasses from material selection to applications and various configurations.<br>
+[<i class="bi bi-filetype-pdf"></i> Paper](https://or.niscpr.res.in/index.php/IJPAP/article/view/110)
+
+<hr>
+
+#### COPaQ 2022, Indian Institute of Technology Roorkee
+
+### Tunable Graphene-Integrated Cascaded Silicon Microring Resonators
+Prasanna Paithankar, Sridhar Singhal, Sauradeep Kar & Shailendra K Varshney
+
+Abstract: We theoretically and numerically demonstrate a tunable graphene-integrated cascaded tapered racetrack microring resonator (TRMRR) system. We have derived transmission field amplitudes of such cascaded system without graphene. The deposition of graphene on the PNF region produces an optoelectronically tunable transmission with an appreciable extinction by harnessing the unique advantages of graphene and cascaded resonator system. The proposed device can be potentially used for sensing and modulator applications.<br>
+[<i class="bi bi-easel2"></i> Poster](Assets/COPaQ_2022_Poster.pdf)\ \ |\ \ [<i class="bi bi-card-heading"></i> Abstract](Assets/COPaQ_2022_Abstract.pdf)
+
+<hr>
+<div style="font-size: 12px; color: grey; text-align: right; ">
+Prasanna Paithankar | Deptarment of Computer Science & Engineering | Indian Insitute of Technology Kharagpur<br>Made using [Quarto](https://quarto.org/) </div>

@@ -1,0 +1,35 @@
+---
+title: "Miscellaneous"
+---
+<style>
+  p {
+    text-align: justify;
+  }
+
+  a {
+    color: inherit;
+    text-decoration: none;
+  }
+</style>
+<hr>
+  
+### Course Notes
+#### [<i class="bi bi-journal-bookmark"></i> \ \ photonic Quantum Information Technologies (AT60205) Autumn 2023](AT60205/index.html)
+### Handouts
+#### <i class="bi bi-filetype-pdf"></i> \ \ Markovian Decision Process in Bipedal Locomotion
+#### <i class="bi bi-filetype-pdf"></i> \ \ Analysis of Physical Qubit Systems
+
+### Lectures
+#### <i class="bi bi-file-earmark-easel"></i> \ \ Adversarial Papayas: Introduction to Machine Learning
+##### [12/2023] Winter School of AI & Robotics 2023-24
+#### <i class="bi bi-file-earmark-easel"></i> \ \ The Big Picture & Some Nicheness: The Final Chapter
+##### [03/2023] Winter School of AI & Robotics 2022-23
+
+### [<i class="bi bi-box-arrow-up-right"></i>  \ GPG Public Key](Assets/pub-key.txt)
+<hr>
+
+<div style="font-size: 12px; color: grey; text-align: right; ">
+Prasanna Paithankar | Deptarment of Computer Science & Engineering | Indian Insitute of Technology Kharagpur<br>Made using [Quarto](https://quarto.org/) </div>
+
+
+

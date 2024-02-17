@@ -1,0 +1,34 @@
+project:
+  type: book
+
+
+book:
+  title: "pQIT Notes Autumn '23"
+  author: "Prasanna Paithankar"
+  date: "29/12/2023"
+  # favicon: cover.png
+  repo-url: https://github.com/jjallaire/hopr/
+  downloads: [pdf, epub]
+  sharing: [twitter, facebook]
+  chapters:
+    - index.qmd
+    - basics.qmd
+    - qoptics.qmd
+    - states.qmd
+    - sources.qmd
+    - detection.qmd
+    - communication.qmd
+    - computation.qmd
+    - metrology.qmd
+    - references.qmd
+
+bibliography: references.bib
+
+format:
+  html:
+    theme: cosmo
+  pdf:
+    documentclass: scrreprt
+
+
+
