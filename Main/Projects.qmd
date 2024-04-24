@@ -13,14 +13,25 @@ title: "Projects"
 </style>
 <hr>
 
-#### <a href=""><i class="bi bi-github" target="_blank"></i> \ \ 32-bit RISC-V Processor </a>
-#### <a href="https://github.com/somnathjena2011/ISRO" target="_blank"><i class="bi bi-github"></i> \ \ Lunar T-GAN for Super-Resolution and Atlas Stitching </a>
-#### <a href="" target="_blank"><i class="bi bi-github"></i> \ \ Video Rental and Recommenation System </a>
+#### <a href="https://github.com/somnathjena2011/ISRO" target="_blank"><i class="bi bi-github"></i> \ \ Lunar T-GAN for Super-Resolution and Atlas Stitching </a> 
+<em> Inter IIT Tech Meet 11.0</em>
+
 #### <a href="https://github.com/PrasannaPaithankar/AGV-Embedded-Task" target="_blank"><i class="bi bi-github"></i> \ \ Adaptive Extended Kalman Filter for SoC Estimation </a>
+<em> Autonomous Ground Vehicle Research Group </em>
+
 #### <a href="https://github.com/PrasannaPaithankar/PPT-Gesture-Control" target="_blank"><i class="bi bi-github"></i> \ \ not your casual PPT Gesture Control </a>
+<em> Technology Robotix Society </em>
+
 #### <a href="https://github.com/PrasannaPaithankar/GSTscraper" target="_blank"><i class="bi bi-github"></i> \ \ GST Scraper </a>
+<em> Bhushan & Associates </em>
+
 #### <a href="https://github.com/PrasannaPaithankar/Collection-Service" target="_blank"><i class="bi bi-github"></i> \ \ Agent Daily Collection Portal </a>
+<em> Bhushan & Associates </em>
+
 #### <a href="" target="_blank"><i class="bi bi-github"></i> \ \ AtVision - Biometric System for Covid-19 Era </a>
+<em> Smart India Hackathon 2022 </em>
+
+For course projects, please refer to the <a href="./Misc.html" style="color: #007bff;">Miscellaneous</a> section.
 <hr>
 <div style="font-size: 12px; color: grey; text-align: right; ">
-Prasanna Paithankar | Deptarment of Computer Science & Engineering | Indian Insitute of Technology Kharagpur<br>Made using [Quarto](https://quarto.org/) </div>
+Prasanna Paithankar | Deptarment of Computer Science & Engineering | Indian Insitute of Technology Kharagpur<br>Made using <a href="https://quarto.org" style="color: #007bff;">Quarto</a> </div>

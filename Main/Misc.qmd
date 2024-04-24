@@ -13,8 +13,12 @@ title: "Miscellaneous"
 </style>
 <hr>
   
-### Course Notes
+### Course Notes & Codes
 #### [<i class="bi bi-journal-bookmark"></i> \ \ photonic Quantum Information Technologies (AT60205) Autumn 2023](AT60205/index.html)
+#### [<i class="bi bi-github"></i> \ \ Database Management Systems Laboratory (CS39202) Spring 2024](https://github.com/PrasannaPaithankar/DBMS-Laboratory-Spr-24)
+#### [<i class="bi bi-github"></i> \ \ Computer Networks Laboratory (CS39006) Spring 2024](https://github.com/PrasannaPaithankar/Computer-Networks-Laboratory-Spr-24)
+#### [<i class="bi bi-github"></i> \ \ Operating Systems Laboratory (CS39002) Spring 2024](https://github.com/PrasannaPaithankar/Operating-Systems-Laboratory-Spr-24)
+
 ### Handouts
 #### <i class="bi bi-filetype-pdf"></i> \ \ Markovian Decision Process in Bipedal Locomotion
 #### <i class="bi bi-filetype-pdf"></i> \ \ Analysis of Physical Qubit Systems
@@ -25,11 +29,19 @@ title: "Miscellaneous"
 #### <i class="bi bi-file-earmark-easel"></i> \ \ The Big Picture & Some Nicheness: The Final Chapter
 ##### [03/2023] Winter School of AI & Robotics 2022-23
 
+<!-- ### More
+#### <i class="bi bi-file-earmark-text"></i> \ \ [Rust Dump](Rust-Dump.html)
+#### <i class="bi bi-file-earmark-text"></i> \ \ [CTF Writeups](CTF-Writeups.html) -->
+
 ### [<i class="bi bi-box-arrow-up-right"></i>  \ GPG Public Key](Assets/pub-key.txt)
+
+<!-- ### Selected Reads -->
+
+
 <hr>
 
 <div style="font-size: 12px; color: grey; text-align: right; ">
-Prasanna Paithankar | Deptarment of Computer Science & Engineering | Indian Insitute of Technology Kharagpur<br>Made using [Quarto](https://quarto.org/) </div>
+Prasanna Paithankar | Deptarment of Computer Science & Engineering | Indian Insitute of Technology Kharagpur<br>Made using <a href="https://quarto.org" style="color: #007bff;">Quarto</a> </div>
 
 
 
