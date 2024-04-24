@@ -1,0 +1,324 @@
+# Basics of Quantum Physics & Quantum Information Science {.unnumbered}
+
+<div style="text-align: justify">
+## Dirac Formalism
+$|x\rangle$ is called a ket viz. a vector with complex values in Hilbert space.
+It's dual is called a bra, $\langle x|$
+
+Let $\{|\phi_1\rangle, |\phi_2\rangle, ..., \phi_n\rangle\}$ be a basis for a Hilbert space, then any vector $|\psi\rangle$ can be written as a linear combination of the basis vectors:
+
+$$ |\psi\rangle = \sum_{i=1}^n c_i |\phi_i\rangle\ ;\ c_i \in \mathbb{C} $$
+
+We would in this course consider 2-dimensional Hilbert space with orthonormal basis $\{|\phi_1\rangle, |\phi_2\rangle\}$ unless otherwise stated.
+
+If the basis follows $\langle \phi_i | \phi_j \rangle = \delta_{ij}$ then they are orthonormal. Furthermore $\sum_{i} |\phi_i\rangle \langle \phi_i | = I$ states that the basis is complete.
+
+### Block Sphere Representation
+Any state $|\psi\rangle$ can be represented as a point on the block sphere. The state $|\psi\rangle$ is represented by the vector $\vec{r} = (r, \theta, \phi)$ where a general state is given by:
+
+$$ |\psi\rangle = e^{i\gamma} \cos(\frac{\theta}{2}) |0\rangle + e^{i\gamma}e^{i\phi} \sin(\frac{\theta}{2}) |1\rangle $$
+
+$\gamma$ is the global phase.
+
+### Operators
+An operator is a linear map from one Hilbert space to another. An operator $\hat{A}$ acting on a state $|\psi\rangle$ gives another state $|\psi'\rangle$.
+
+$$\hat{A}|\psi\rangle = |\psi'\rangle$$
+
+The operator $\hat{A}$ can be represented as a matrix in the basis $\{|\phi_1\rangle, |\phi_2\rangle, ..., \phi_n\rangle\}$ as:
+
+$$\hat{A} = \sum_{i,j} A_{ij} |\phi_i\rangle \langle \phi_j |$$
+
+The matrix elements $A_{ij}$ are given by:
+
+$$A_{ij} = \langle \phi_i | \hat{A} | \phi_j \rangle$$
+
+The operator $\hat{A}$ is said to be Hermitian if $\hat{A} = \hat{A}^\dagger$ where $\hat{A}^\dagger$ is the adjoint of $\hat{A}$.
+
+$$\hat{A}^\dagger = \sum_{i,j} A_{ij}^* |\phi_j\rangle \langle \phi_i |$$
+
+The adjoint of an operator is the transpose of the matrix elements with complex conjugate.
+
+Eigenvalues of an operator $\hat{A}$ are the values $\lambda$ such that:
+
+$$\hat{A}|\psi\rangle = \lambda|\psi\rangle$$
+
+The eigenvalues of a Hermitian operator are real. i.e. $\lambda \in \mathbb{R}$
+
+Unitary operators are those that preserve the norm of the state. i.e. $\hat{U}^\dagger \hat{U} = \hat{U} \hat{U}^\dagger = I$
+
+$$\hat{U}(t) = e^{-i\hat{H}t/\hbar}$$
+
+The operator $\hat{H}$ is called the Hamiltonian and is Hermitian. The Hamiltonian is the energy operator.
+
+Commutator of two operators $\hat{A}$ and $\hat{B}$ is defined as:
+
+$$[\hat{A}, \hat{B}] = \hat{A}\hat{B} - \hat{B}\hat{A}$$
+
+$[\hat{A}, \hat{B}] = 0$ if $\hat{A}$ and $\hat{B}$ commute i.e. $\hat{A}\hat{B} = \hat{B}\hat{A}$
+
+Uncertainty principle: $[\hat{A}, \hat{B}] \neq 0$ implies that the operators do not commute and the uncertainty in the measurement of $\hat{A}$ and $\hat{B}$ cannot be simultaneously zero.
+
+$$\Delta A \Delta B \geq \frac{1}{2} |\langle [\hat{A}, \hat{B}] \rangle|$$
+
+where $\Delta A = \sqrt{\langle \hat{A}^2 \rangle - \langle \hat{A} \rangle^2} = \sqrt{\langle \psi | \hat{A}^2 | \psi \rangle - \langle \psi | \hat{A} | \psi \rangle^2}$
+
+### Pauli Matrices
+Defining $|0\rangle = \begin{bmatrix} 1 \\ 0 \end{bmatrix}$ and $|1\rangle = \begin{bmatrix} 0 \\ 1 \end{bmatrix}$
+
+The Pauli matrices are defined as:
+
+Identity
+$$ I = \begin{bmatrix} 1 & 0 \\ 0 & 1 \end{bmatrix} = |0\rangle \langle 0 | + |1\rangle \langle 1 | $$
+
+Pauli-X
+$$ \sigma_x = \begin{bmatrix} 0 & 1 \\ 1 & 0 \end{bmatrix} = |0\rangle \langle 1 | + |1\rangle \langle 0 | $$
+
+Pauli-Y
+$$ \sigma_y = \begin{bmatrix} 0 & -i \\ i & 0 \end{bmatrix} = -i|0\rangle \langle 1 | + i|1\rangle \langle 0 | $$
+
+Pauli-Z
+$$ \sigma_z = \begin{bmatrix} 1 & 0 \\ 0 & -1 \end{bmatrix} = |0\rangle \langle 0 | - |1\rangle \langle 1 | $$
+
+The Pauli matrices are Hermitian and unitary. The Pauli matrices are also traceless. They do not commute with each other.
+
+$[\sigma_x, \sigma_y] = 2i\sigma_z\ ;\ [\sigma_y, \sigma_z] = 2i\sigma_x\ ;\ [\sigma_z, \sigma_x] = 2i\sigma_y$
+
+On Bloch sphere, $\sigma_x$ is rotation about $x$-axis by $\pi$ radians, $\sigma_y$ is rotation about $y$-axis by $\pi$ radians and $\sigma_z$ is rotation about $z$-axis by $\pi$ radians.
+
+$$ \begin{bmatrix} \langle \sigma_x \rangle \\ \langle \sigma_y \rangle \\ \langle \sigma_z \rangle \end{bmatrix} = \begin{bmatrix} \langle \psi | \sigma_x | \psi \rangle \\ \langle \psi | \sigma_y | \psi \rangle \\ \langle \psi | \sigma_z | \psi \rangle \end{bmatrix} = \begin{bmatrix} \cos(\phi)\sin(\theta) \\ \sin(\phi)\sin(\theta) \\ \cos(\theta) \end{bmatrix} $$
+
+where $|\psi\rangle = \cos(\frac{\theta}{2}) |0\rangle + e^{i\phi} \sin(\frac{\theta}{2}) |1\rangle$
+
+Eigenvectors of Pauli matrices are:
+
+$$\sigma_x |+\rangle = |+\rangle\ ;\ \sigma_x |-\rangle = -|-\rangle$$
+$$\sigma_y |R\rangle = |R\rangle\ ;\ \sigma_y |L\rangle = -|L\rangle$$
+$$\sigma_z |0\rangle = |0\rangle\ ;\ \sigma_z |1\rangle = -|1\rangle$$
+
+where $|+\rangle = \frac{1}{\sqrt{2}} (|0\rangle + |1\rangle)\ ;\ |-\rangle = \frac{1}{\sqrt{2}} (|0\rangle - |1\rangle)\ ;\ |R\rangle = \frac{1}{\sqrt{2}} (|0\rangle + i|1\rangle)$ and $|L\rangle = \frac{1}{\sqrt{2}} (|0\rangle - i|1\rangle)$
+
+The transformations can be represented as:
+$$(r, \theta, \phi) \overset{\sigma_x}{\rightarrow} (r, \theta, \pi + \phi)$$
+$$(r, \theta, \phi) \overset{\sigma_y}{\rightarrow} (r, \pi - \theta, -\phi)$$
+$$(r, \theta, \phi) \overset{\sigma_z}{\rightarrow} (r, \pi - \theta, -\pi - \phi)$$
+
+### Single Photon Polarization
+Let $|H\rangle \equiv |0\rangle $ and $|V\rangle \equiv |1\rangle$ be the horizontal and vertical polarization states of a photon. 
+
+The diagonal polarization states are $|D\rangle = \frac{1}{\sqrt{2}} (|H\rangle + |V\rangle)$ and $|A\rangle = \frac{1}{\sqrt{2}} (|H\rangle - |V\rangle)$
+
+The circular polarization states are $|R\rangle = \frac{1}{\sqrt{2}} (|H\rangle + i|V\rangle)$ and $|L\rangle = \frac{1}{\sqrt{2}} (|H\rangle - i|V\rangle)$
+
+### Effect of optical elements on polarization states:
+#### Linear Polarizer
+A linear polarizer transmits light polarized along a particular direction. The transmission axis of the polarizer is the direction of polarization of the transmitted light.
+
+$$|\psi\rangle \overset{P}{\rightarrow} |\psi'\rangle$$
+
+where $|\psi\rangle = \alpha|H\rangle + \beta|V\rangle$ and $|\psi'\rangle = \alpha|H\rangle$
+
+$$ P = \begin{bmatrix} \cos^2(\theta) & \cos(\theta)\sin(\theta) \\ \cos(\theta)\sin(\theta) & \sin^2(\theta) \end{bmatrix} $$
+
+where $\theta$ is the angle between the transmission axis of the polarizer and the horizontal axis.
+
+#### Quarter Wave Plate
+A quarter wave plate converts linear polarization to circular polarization and vice versa. The quarter wave plate is oriented at an angle of $\theta$ with respect to the horizontal axis.
+
+$$ QWP = \begin{bmatrix} \exp(-i\pi/4) & 0 \\ 0 & \exp(i\pi/4) \end{bmatrix} = \frac{1}{\sqrt{2}} \begin{bmatrix} 1 & -i \\ -i & 1 \end{bmatrix} $$
+
+#### Half Wave Plate
+A half wave plate converts linear polarization to linear polarization and vice versa. The half wave plate is oriented at an angle of $\theta$ with respect to the horizontal axis.
+
+$$HWP = \sigma_z$$
+
+### More Operators
+#### Trace operator
+The trace operator is defined as:
+
+$$ Tr(\hat{A}) = \sum_i \langle \phi_i | \hat{A} | \phi_i \rangle $$
+
+The inner product of two states $|\psi\rangle$ and $|\phi\rangle$ can be given by:
+
+$$\langle \psi | \phi \rangle = Tr(|\psi\rangle \langle \phi|)$$
+
+#### Density Operator
+The density operator is defined as:
+
+$$ \rho = |\psi\rangle \langle \psi| $$
+
+where $\rho_{ij} = \langle \phi_i | \psi \rangle \langle \psi | \phi_j \rangle$
+
+The expectation value of an operator $\hat{A}$ is given by:
+
+$\langle \hat{A} \rangle = Tr(\rho \hat{A})\\Proof:\\$
+$\langle \hat{A} \rangle = \langle \psi | \hat{A} | \psi \rangle = \sum_{i,j} \rho_{ij} \langle \phi_i | \hat{A} | \phi_j \rangle \\
+= \sum_{i} \rho_{i} \langle \phi_i | \hat{A} \sum_{j} |\phi_j\rangle \langle \phi_j| \phi_j \rangle = \sum_{i} \rho_{i} \langle \phi_i | \hat{A} | \phi_i \rangle \\
+= Tr(\rho \hat{A})$
+
+The density operator can be written as:
+
+$$\rho = \frac{1}{2} (I + \vec{r} \cdot \vec{\sigma})$$
+
+where $\vec{r} = (r, \theta, \phi)$
+
+$$Tr(\rho) = 1$$
+
+Purity of a state is given by:
+$$Tr(\rho^2) = \sum_{i} \rho_{ii}^2 \leq 1$$
+if $Tr(\rho^2) = 1$ then the state is pure else it is mixed.
+<br> Purity = 1 - $Tr(\rho^2)$
+
+Von Neumann entropy is given by:
+$$S(\rho) = -Tr(\rho \log_2 \rho)$$
+$S(\rho) = 0$ for pure states and $S(\rho) > 0$ for mixed states.
+
+### Measurement
+Probability of measuring a state $|\psi\rangle$ in the state $|\phi\rangle$ is given by:
+
+$$P(\phi) = |\langle \phi | \psi \rangle|^2$$
+
+It can be also given using the density operator as:
+
+$$P(\phi) = \langle \phi | \rho | \phi \rangle = Tr(\rho |\phi\rangle \langle \phi|)$$
+
+$$ P(\phi) = Tr(\rho \Pi_\phi) $$
+
+where $\Pi_\phi = |\phi\rangle \langle \phi|$ is the projection operator.
+
+$$\sum_{\phi} \Pi_\phi = I$$
+
+$$\Pi_\phi \Pi_\psi = \delta_{\phi\psi} \Pi_\phi$$
+
+The expectation value of an operator $\hat{A}$ is given by:
+
+$$\langle \hat{A} \rangle = \sum_{\phi} P(\phi) \langle \phi | \hat{A} | \phi \rangle = Tr(\rho \hat{A})$$
+
+The density operator after measurement is given by:
+
+$$ \rho' = \frac{\Pi_\phi \rho \Pi_\phi}{P(\phi)} = \frac{\Pi_\phi \rho \Pi_\phi}{Tr(\rho \Pi_\phi)} $$
+
+### Positive Operator Valued Measure (POVM)
+A POVM is a set of operators $\{E_i\}$ such that $E_i \geq 0$ and $\sum_i E_i = I$ where $I$ is the identity operator.
+
+The probability of measuring a state $|\psi\rangle$ in the state $|\phi\rangle$ is given by: 
+
+$$P(\phi) = \sum_i \langle \phi | E_i | \phi \rangle = Tr(\rho E_i)$$
+
+### Multiple Quantum Systems
+2 level system => qubit
+
+d level system => qudit
+
+The Hilbert space of a composite system is the tensor product of the Hilbert spaces of the individual systems.
+
+$$\mathcal{H} = \mathcal{H}_1 \otimes \mathcal{H}_2$$
+
+The basis vectors of the composite system are given by:
+
+$$|\phi_i\rangle \otimes |\psi_j\rangle = |\phi_i\psi_j\rangle$$
+
+The basis vectors of the composite system are orthonormal if the basis vectors of the individual systems are orthonormal.
+
+$$\langle \phi_i | \phi_j \rangle = \delta_{ij}\ ;\ \langle \psi_i | \psi_j \rangle = \delta_{ij}$$
+
+The basis vectors of the composite system are complete if the basis vectors of the individual systems are complete.
+
+$$\sum_{i,j} |\phi_i\rangle \langle \phi_i | \otimes |\psi_j\rangle \langle \psi_j | = I$$
+
+The density operator of the composite system is given by:
+
+$$\rho = \rho_1 \otimes \rho_2$$
+
+The expectation value of an operator $\hat{A}$ is given by:
+
+$$\langle \hat{A} \rangle = Tr(\rho \hat{A}) = Tr(\rho_1 \otimes \rho_2 \hat{A}_1 \otimes \hat{A}_2) = Tr(\rho_1 \hat{A}_1) Tr(\rho_2 \hat{A}_2)$$
+
+Generic States:
+
+$$|\psi\rangle_a = \sum_{i} c_{i} |\phi_i\rangle\ ;\ |\psi\rangle_b = \sum_{j} d_{j} |\psi_j\rangle\
+where\ c_{ij} \in \mathbb{C}$$
+
+$$ |\psi\rangle_{ab} = \sum_{i,j} c_{ij} |\phi_i\rangle \otimes |\psi_j\rangle $$
+e.g. $|\psi\rangle_{ab} = \frac{1}{2} (|00\rangle + |01\rangle + |10\rangle + |11\rangle)\\
+= \frac{1}{\sqrt{2}} (|0\rangle_a + |1\rangle_a) \otimes \frac{1}{\sqrt{2}} (|0\rangle_b + |1\rangle_b)\\
+= |\psi\rangle_a \otimes |\psi\rangle_b$
+
+Non-generic States (non-separable):
+$$|\psi\rangle_{ab} \neq |\psi\rangle_a \otimes |\psi\rangle_b$$
+
+e.g. $|\psi\rangle_{ab} = \alpha|00\rangle + \beta|11\rangle$
+
+They are called entangled states.
+
+### Bell States
+The Bell states are given by:
+
+$$ |\Phi^+\rangle = \frac{1}{\sqrt{2}} (|00\rangle + |11\rangle)$$
+$$ |\Phi^-\rangle = \frac{1}{\sqrt{2}} (|00\rangle - |11\rangle)$$
+$$ |\Psi^+\rangle = \frac{1}{\sqrt{2}} (|01\rangle + |10\rangle)$$
+$$ |\Psi^-\rangle = \frac{1}{\sqrt{2}} (|01\rangle - |10\rangle)$$
+
+
+$|\Phi^+\rangle$ and $|\Phi^-\rangle$ are symmetric under exchange of qubits.
+
+$|\Psi^+\rangle$ and $|\Psi^-\rangle$ are anti-symmetric under exchange of qubits.
+
+Probability of measuring a Bell state $|\Phi^+\rangle$ in the state $|00\rangle$ is given by:
+> $P(00) = |\langle 00 | \Phi^+ \rangle|^2 = \frac{1}{2}$
+
+This randomness of Bell states is used in Quantum Technologies.
+
+Bell states are eigenstates of the Pauli operators of the composite systems with eigenvalues = +-1
+
+Entanglement persistes in different basis
+
+### Entanglement Quantification
+#### Partial Projection
+Partial projection of a state $|\psi\rangle$ is given by:
+
+$$ \Pi_a = \sum_{i} |\phi_i\rangle \langle \phi_i | \otimes I_b $$
+
+#### Partial Trace
+Partial trace of a state $|\psi\rangle$ is given by:
+
+$$ \rho_a = Tr_b(|\psi\rangle \langle \psi|) = \sum_{i} \langle \phi_i | \psi \rangle \langle \psi | \phi_i \rangle $$
+$$ \rho_b = Tr_a(|\psi\rangle \langle \psi|) = \sum_{j} \langle \psi_j | \psi \rangle \langle \psi | \psi_j \rangle $$
+
+### 3 Qubit System
+The basis vectors of the composite system are given by:
+
+$$|\phi_i\rangle \otimes |\psi_j\rangle \otimes |\chi_k\rangle = |\phi_i\psi_j\chi_k\rangle$$
+
+#### GHZ State
+The GHZ state is given by:
+
+$$ |\psi\rangle_{GHZ} = \frac{1}{\sqrt{2}} (|000\rangle + |111\rangle) $$
+
+The state is maximally entangled.
+
+#### W State
+The W state is given by:
+
+$$ |\psi\rangle_{W} = \alpha |001\rangle + \beta |010\rangle + \gamma |100\rangle $$
+
+### Entanglement Entropy / Von Neumann Entropy
+The entanglement entropy of a state $|\psi\rangle$ is given by:
+
+$$ S(\rho_a) = -Tr(\rho_a \log_2 \rho_a) $$
+
+where $\rho_a = Tr_b(|\psi\rangle \langle \psi|)$
+
+### Schmidt Decomposition
+The Schmidt decomposition of a state $|\psi\rangle$ is given by:
+
+$$ |\psi\rangle = \sum_{i} \sqrt{\lambda_i} |\phi_i\rangle \otimes |\psi_i\rangle $$
+
+where $\lambda_i$ are the eigenvalues of $\rho_a$ and $|\phi_i\rangle$ and $|\psi_i\rangle$ are the eigenvectors of $\rho_a$ and $\rho_b$ respectively.
+
+$$\rho_a = \sum_{i} \lambda_i |\phi_i\rangle \langle \phi_i |\\
+\rho_b = \sum_{i} \lambda_i |\psi_i\rangle \langle \psi_i |$$
+
+$$ S(\rho_a) = -\sum_{i} \lambda_i \log_2 \lambda_i = S(\rho_b) $$
+
+</div>

@@ -1,0 +1,906 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
+
+<meta charset="utf-8">
+<meta name="generator" content="quarto-1.4.550">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+
+
+<title>pQIT Notes Autumn ’23 - Basics of Quantum Physics &amp; Quantum Information Science</title>
+<style>
+code{white-space: pre-wrap;}
+span.smallcaps{font-variant: small-caps;}
+div.columns{display: flex; gap: min(4vw, 1.5em);}
+div.column{flex: auto; overflow-x: auto;}
+div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+ul.task-list{list-style: none;}
+ul.task-list li input[type="checkbox"] {
+  width: 0.8em;
+  margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
+  vertical-align: middle;
+}
+</style>
+
+
+<script src="site_libs/quarto-nav/quarto-nav.js"></script>
+<script src="site_libs/quarto-nav/headroom.min.js"></script>
+<script src="site_libs/clipboard/clipboard.min.js"></script>
+<script src="site_libs/quarto-search/autocomplete.umd.js"></script>
+<script src="site_libs/quarto-search/fuse.min.js"></script>
+<script src="site_libs/quarto-search/quarto-search.js"></script>
+<meta name="quarto:offset" content="./">
+<link href="./qoptics.html" rel="next">
+<link href="./index.html" rel="prev">
+<script src="site_libs/quarto-html/quarto.js"></script>
+<script src="site_libs/quarto-html/popper.min.js"></script>
+<script src="site_libs/quarto-html/tippy.umd.min.js"></script>
+<script src="site_libs/quarto-html/anchor.min.js"></script>
+<link href="site_libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="site_libs/quarto-html/quarto-syntax-highlighting.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<script src="site_libs/bootstrap/bootstrap.min.js"></script>
+<link href="site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="site_libs/bootstrap/bootstrap.min.css" rel="stylesheet" id="quarto-bootstrap" data-mode="light">
+<script id="quarto-search-options" type="application/json">{
+  "location": "sidebar",
+  "copy-button": false,
+  "collapse-after": 3,
+  "panel-placement": "start",
+  "type": "textbox",
+  "limit": 50,
+  "keyboard-shortcut": [
+    "f",
+    "/",
+    "s"
+  ],
+  "show-item-context": false,
+  "language": {
+    "search-no-results-text": "No results",
+    "search-matching-documents-text": "matching documents",
+    "search-copy-link-title": "Copy link to search",
+    "search-hide-matches-text": "Hide additional matches",
+    "search-more-match-text": "more match in this document",
+    "search-more-matches-text": "more matches in this document",
+    "search-clear-button-title": "Clear",
+    "search-text-placeholder": "",
+    "search-detached-cancel-button-title": "Cancel",
+    "search-submit-button-title": "Submit",
+    "search-label": "Search"
+  }
+}</script>
+
+  <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+  <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js" type="text/javascript"></script>
+
+<script type="text/javascript">
+const typesetMath = (el) => {
+  if (window.MathJax) {
+    // MathJax Typeset
+    window.MathJax.typeset([el]);
+  } else if (window.katex) {
+    // KaTeX Render
+    var mathElements = el.getElementsByClassName("math");
+    var macros = [];
+    for (var i = 0; i < mathElements.length; i++) {
+      var texText = mathElements[i].firstChild;
+      if (mathElements[i].tagName == "SPAN") {
+        window.katex.render(texText.data, mathElements[i], {
+          displayMode: mathElements[i].classList.contains('display'),
+          throwOnError: false,
+          macros: macros,
+          fleqn: false
+        });
+      }
+    }
+  }
+}
+window.Quarto = {
+  typesetMath
+};
+</script>
+
+</head>
+
+<body class="nav-sidebar floating">
+
+<div id="quarto-search-results"></div>
+  <header id="quarto-header" class="headroom fixed-top">
+  <nav class="quarto-secondary-nav">
+    <div class="container-fluid d-flex">
+      <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+        <i class="bi bi-layout-text-sidebar-reverse"></i>
+      </button>
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./basics.html">Basics of Quantum Physics &amp; Quantum Information Science</a></li></ol></nav>
+        <a class="flex-grow-1" role="button" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
+        </a>
+      <button type="button" class="btn quarto-search-button" aria-label="" onclick="window.quartoOpenSearch();">
+        <i class="bi bi-search"></i>
+      </button>
+    </div>
+  </nav>
+</header>
+<!-- content -->
+<div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article">
+<!-- sidebar -->
+  <nav id="quarto-sidebar" class="sidebar collapse collapse-horizontal quarto-sidebar-collapse-item sidebar-navigation floating overflow-auto">
+    <div class="pt-lg-2 mt-2 text-left sidebar-header">
+    <div class="sidebar-title mb-0 py-0">
+      <a href="./">pQIT Notes Autumn ’23</a> 
+        <div class="sidebar-tools-main tools-wide">
+    <a href="https://github.com/jjallaire/hopr/" title="Source Code" class="quarto-navigation-tool px-1" aria-label="Source Code"><i class="bi bi-github"></i></a>
+    <div class="dropdown">
+      <a href="" title="Download" id="quarto-navigation-tool-dropdown-0" class="quarto-navigation-tool dropdown-toggle px-1" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Download"><i class="bi bi-download"></i></a>
+      <ul class="dropdown-menu" aria-labelledby="quarto-navigation-tool-dropdown-0">
+          <li>
+            <a class="dropdown-item sidebar-tools-main-item" href="./pQIT-Notes-Autumn--23.pdf">
+              <i class="bi bi-bi-file-pdf pe-1"></i>
+            Download PDF
+            </a>
+          </li>
+          <li>
+            <a class="dropdown-item sidebar-tools-main-item" href="./pQIT-Notes-Autumn--23.epub">
+              <i class="bi bi-bi-journal pe-1"></i>
+            Download ePub
+            </a>
+          </li>
+      </ul>
+    </div>
+    <div class="dropdown">
+      <a href="" title="Share" id="quarto-navigation-tool-dropdown-1" class="quarto-navigation-tool dropdown-toggle px-1" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Share"><i class="bi bi-share"></i></a>
+      <ul class="dropdown-menu" aria-labelledby="quarto-navigation-tool-dropdown-1">
+          <li>
+            <a class="dropdown-item sidebar-tools-main-item" href="https://twitter.com/intent/tweet?url=|url|">
+              <i class="bi bi-bi-twitter pe-1"></i>
+            Twitter
+            </a>
+          </li>
+          <li>
+            <a class="dropdown-item sidebar-tools-main-item" href="https://www.facebook.com/sharer/sharer.php?u=|url|">
+              <i class="bi bi-bi-facebook pe-1"></i>
+            Facebook
+            </a>
+          </li>
+      </ul>
+    </div>
+</div>
+    </div>
+      </div>
+        <div class="mt-2 flex-shrink-0 align-items-center">
+        <div class="sidebar-search">
+        <div id="quarto-search" class="" title="Search"></div>
+        </div>
+        </div>
+    <div class="sidebar-menu-container"> 
+    <ul class="list-unstyled mt-1">
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./index.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">About</span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./basics.html" class="sidebar-item-text sidebar-link active">
+ <span class="menu-text">Basics of Quantum Physics &amp; Quantum Information Science</span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./qoptics.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Quantum Optics</span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./states.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">pQuantum States</span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./sources.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Sources of pQuantum States</span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./detection.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Detection of Quantum Light</span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./communication.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">pQuantum Communication</span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./computation.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">pQuantum Computation</span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./metrology.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">pQuantum Metrology</span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./references.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">References</span></a>
+  </div>
+</li>
+    </ul>
+    </div>
+</nav>
+<div id="quarto-sidebar-glass" class="quarto-sidebar-collapse-item" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item"></div>
+<!-- margin-sidebar -->
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
+        <nav id="TOC" role="doc-toc" class="toc-active">
+    <h2 id="toc-title">Table of contents</h2>
+   
+  <ul>
+  <li><a href="#dirac-formalism" id="toc-dirac-formalism" class="nav-link active" data-scroll-target="#dirac-formalism">Dirac Formalism</a>
+  <ul class="collapse">
+  <li><a href="#block-sphere-representation" id="toc-block-sphere-representation" class="nav-link" data-scroll-target="#block-sphere-representation">Block Sphere Representation</a></li>
+  <li><a href="#operators" id="toc-operators" class="nav-link" data-scroll-target="#operators">Operators</a></li>
+  <li><a href="#pauli-matrices" id="toc-pauli-matrices" class="nav-link" data-scroll-target="#pauli-matrices">Pauli Matrices</a></li>
+  <li><a href="#single-photon-polarization" id="toc-single-photon-polarization" class="nav-link" data-scroll-target="#single-photon-polarization">Single Photon Polarization</a></li>
+  <li><a href="#effect-of-optical-elements-on-polarization-states" id="toc-effect-of-optical-elements-on-polarization-states" class="nav-link" data-scroll-target="#effect-of-optical-elements-on-polarization-states">Effect of optical elements on polarization states:</a></li>
+  <li><a href="#more-operators" id="toc-more-operators" class="nav-link" data-scroll-target="#more-operators">More Operators</a></li>
+  <li><a href="#measurement" id="toc-measurement" class="nav-link" data-scroll-target="#measurement">Measurement</a></li>
+  <li><a href="#positive-operator-valued-measure-povm" id="toc-positive-operator-valued-measure-povm" class="nav-link" data-scroll-target="#positive-operator-valued-measure-povm">Positive Operator Valued Measure (POVM)</a></li>
+  <li><a href="#multiple-quantum-systems" id="toc-multiple-quantum-systems" class="nav-link" data-scroll-target="#multiple-quantum-systems">Multiple Quantum Systems</a></li>
+  <li><a href="#bell-states" id="toc-bell-states" class="nav-link" data-scroll-target="#bell-states">Bell States</a></li>
+  <li><a href="#entanglement-quantification" id="toc-entanglement-quantification" class="nav-link" data-scroll-target="#entanglement-quantification">Entanglement Quantification</a></li>
+  <li><a href="#qubit-system" id="toc-qubit-system" class="nav-link" data-scroll-target="#qubit-system">3 Qubit System</a></li>
+  <li><a href="#entanglement-entropy-von-neumann-entropy" id="toc-entanglement-entropy-von-neumann-entropy" class="nav-link" data-scroll-target="#entanglement-entropy-von-neumann-entropy">Entanglement Entropy / Von Neumann Entropy</a></li>
+  <li><a href="#schmidt-decomposition" id="toc-schmidt-decomposition" class="nav-link" data-scroll-target="#schmidt-decomposition">Schmidt Decomposition</a></li>
+  </ul></li>
+  </ul>
+</nav>
+    </div>
+<!-- main -->
+<main class="content" id="quarto-document-content">
+
+<header id="title-block-header" class="quarto-title-block default">
+<div class="quarto-title">
+<h1 class="title">Basics of Quantum Physics &amp; Quantum Information Science</h1>
+</div>
+
+
+
+<div class="quarto-title-meta">
+
+    
+  
+    
+  </div>
+  
+
+
+</header>
+
+
+<section id="dirac-formalism" class="level2" style="text-align: justify">
+<h2 class="anchored" data-anchor-id="dirac-formalism">Dirac Formalism</h2>
+<p><span class="math inline">\(|x\rangle\)</span> is called a ket viz.&nbsp;a vector with complex values in Hilbert space. It’s dual is called a bra, <span class="math inline">\(\langle x|\)</span></p>
+<p>Let <span class="math inline">\(\{|\phi_1\rangle, |\phi_2\rangle, ..., \phi_n\rangle\}\)</span> be a basis for a Hilbert space, then any vector <span class="math inline">\(|\psi\rangle\)</span> can be written as a linear combination of the basis vectors:</p>
+<p><span class="math display">\[ |\psi\rangle = \sum_{i=1}^n c_i |\phi_i\rangle\ ;\ c_i \in \mathbb{C} \]</span></p>
+<p>We would in this course consider 2-dimensional Hilbert space with orthonormal basis <span class="math inline">\(\{|\phi_1\rangle, |\phi_2\rangle\}\)</span> unless otherwise stated.</p>
+<p>If the basis follows <span class="math inline">\(\langle \phi_i | \phi_j \rangle = \delta_{ij}\)</span> then they are orthonormal. Furthermore <span class="math inline">\(\sum_{i} |\phi_i\rangle \langle \phi_i | = I\)</span> states that the basis is complete.</p>
+<section id="block-sphere-representation" class="level3">
+<h3 class="anchored" data-anchor-id="block-sphere-representation">Block Sphere Representation</h3>
+<p>Any state <span class="math inline">\(|\psi\rangle\)</span> can be represented as a point on the block sphere. The state <span class="math inline">\(|\psi\rangle\)</span> is represented by the vector <span class="math inline">\(\vec{r} = (r, \theta, \phi)\)</span> where a general state is given by:</p>
+<p><span class="math display">\[ |\psi\rangle = e^{i\gamma} \cos(\frac{\theta}{2}) |0\rangle + e^{i\gamma}e^{i\phi} \sin(\frac{\theta}{2}) |1\rangle \]</span></p>
+<p><span class="math inline">\(\gamma\)</span> is the global phase.</p>
+</section>
+<section id="operators" class="level3">
+<h3 class="anchored" data-anchor-id="operators">Operators</h3>
+<p>An operator is a linear map from one Hilbert space to another. An operator <span class="math inline">\(\hat{A}\)</span> acting on a state <span class="math inline">\(|\psi\rangle\)</span> gives another state <span class="math inline">\(|\psi'\rangle\)</span>.</p>
+<p><span class="math display">\[\hat{A}|\psi\rangle = |\psi'\rangle\]</span></p>
+<p>The operator <span class="math inline">\(\hat{A}\)</span> can be represented as a matrix in the basis <span class="math inline">\(\{|\phi_1\rangle, |\phi_2\rangle, ..., \phi_n\rangle\}\)</span> as:</p>
+<p><span class="math display">\[\hat{A} = \sum_{i,j} A_{ij} |\phi_i\rangle \langle \phi_j |\]</span></p>
+<p>The matrix elements <span class="math inline">\(A_{ij}\)</span> are given by:</p>
+<p><span class="math display">\[A_{ij} = \langle \phi_i | \hat{A} | \phi_j \rangle\]</span></p>
+<p>The operator <span class="math inline">\(\hat{A}\)</span> is said to be Hermitian if <span class="math inline">\(\hat{A} = \hat{A}^\dagger\)</span> where <span class="math inline">\(\hat{A}^\dagger\)</span> is the adjoint of <span class="math inline">\(\hat{A}\)</span>.</p>
+<p><span class="math display">\[\hat{A}^\dagger = \sum_{i,j} A_{ij}^* |\phi_j\rangle \langle \phi_i |\]</span></p>
+<p>The adjoint of an operator is the transpose of the matrix elements with complex conjugate.</p>
+<p>Eigenvalues of an operator <span class="math inline">\(\hat{A}\)</span> are the values <span class="math inline">\(\lambda\)</span> such that:</p>
+<p><span class="math display">\[\hat{A}|\psi\rangle = \lambda|\psi\rangle\]</span></p>
+<p>The eigenvalues of a Hermitian operator are real. i.e.&nbsp;<span class="math inline">\(\lambda \in \mathbb{R}\)</span></p>
+<p>Unitary operators are those that preserve the norm of the state. i.e.&nbsp;<span class="math inline">\(\hat{U}^\dagger \hat{U} = \hat{U} \hat{U}^\dagger = I\)</span></p>
+<p><span class="math display">\[\hat{U}(t) = e^{-i\hat{H}t/\hbar}\]</span></p>
+<p>The operator <span class="math inline">\(\hat{H}\)</span> is called the Hamiltonian and is Hermitian. The Hamiltonian is the energy operator.</p>
+<p>Commutator of two operators <span class="math inline">\(\hat{A}\)</span> and <span class="math inline">\(\hat{B}\)</span> is defined as:</p>
+<p><span class="math display">\[[\hat{A}, \hat{B}] = \hat{A}\hat{B} - \hat{B}\hat{A}\]</span></p>
+<p><span class="math inline">\([\hat{A}, \hat{B}] = 0\)</span> if <span class="math inline">\(\hat{A}\)</span> and <span class="math inline">\(\hat{B}\)</span> commute i.e.&nbsp;<span class="math inline">\(\hat{A}\hat{B} = \hat{B}\hat{A}\)</span></p>
+<p>Uncertainty principle: <span class="math inline">\([\hat{A}, \hat{B}] \neq 0\)</span> implies that the operators do not commute and the uncertainty in the measurement of <span class="math inline">\(\hat{A}\)</span> and <span class="math inline">\(\hat{B}\)</span> cannot be simultaneously zero.</p>
+<p><span class="math display">\[\Delta A \Delta B \geq \frac{1}{2} |\langle [\hat{A}, \hat{B}] \rangle|\]</span></p>
+<p>where <span class="math inline">\(\Delta A = \sqrt{\langle \hat{A}^2 \rangle - \langle \hat{A} \rangle^2} = \sqrt{\langle \psi | \hat{A}^2 | \psi \rangle - \langle \psi | \hat{A} | \psi \rangle^2}\)</span></p>
+</section>
+<section id="pauli-matrices" class="level3">
+<h3 class="anchored" data-anchor-id="pauli-matrices">Pauli Matrices</h3>
+<p>Defining <span class="math inline">\(|0\rangle = \begin{bmatrix} 1 \\ 0 \end{bmatrix}\)</span> and <span class="math inline">\(|1\rangle = \begin{bmatrix} 0 \\ 1 \end{bmatrix}\)</span></p>
+<p>The Pauli matrices are defined as:</p>
+<p>Identity <span class="math display">\[ I = \begin{bmatrix} 1 &amp; 0 \\ 0 &amp; 1 \end{bmatrix} = |0\rangle \langle 0 | + |1\rangle \langle 1 | \]</span></p>
+<p>Pauli-X <span class="math display">\[ \sigma_x = \begin{bmatrix} 0 &amp; 1 \\ 1 &amp; 0 \end{bmatrix} = |0\rangle \langle 1 | + |1\rangle \langle 0 | \]</span></p>
+<p>Pauli-Y <span class="math display">\[ \sigma_y = \begin{bmatrix} 0 &amp; -i \\ i &amp; 0 \end{bmatrix} = -i|0\rangle \langle 1 | + i|1\rangle \langle 0 | \]</span></p>
+<p>Pauli-Z <span class="math display">\[ \sigma_z = \begin{bmatrix} 1 &amp; 0 \\ 0 &amp; -1 \end{bmatrix} = |0\rangle \langle 0 | - |1\rangle \langle 1 | \]</span></p>
+<p>The Pauli matrices are Hermitian and unitary. The Pauli matrices are also traceless. They do not commute with each other.</p>
+<p><span class="math inline">\([\sigma_x, \sigma_y] = 2i\sigma_z\ ;\ [\sigma_y, \sigma_z] = 2i\sigma_x\ ;\ [\sigma_z, \sigma_x] = 2i\sigma_y\)</span></p>
+<p>On Bloch sphere, <span class="math inline">\(\sigma_x\)</span> is rotation about <span class="math inline">\(x\)</span>-axis by <span class="math inline">\(\pi\)</span> radians, <span class="math inline">\(\sigma_y\)</span> is rotation about <span class="math inline">\(y\)</span>-axis by <span class="math inline">\(\pi\)</span> radians and <span class="math inline">\(\sigma_z\)</span> is rotation about <span class="math inline">\(z\)</span>-axis by <span class="math inline">\(\pi\)</span> radians.</p>
+<p><span class="math display">\[ \begin{bmatrix} \langle \sigma_x \rangle \\ \langle \sigma_y \rangle \\ \langle \sigma_z \rangle \end{bmatrix} = \begin{bmatrix} \langle \psi | \sigma_x | \psi \rangle \\ \langle \psi | \sigma_y | \psi \rangle \\ \langle \psi | \sigma_z | \psi \rangle \end{bmatrix} = \begin{bmatrix} \cos(\phi)\sin(\theta) \\ \sin(\phi)\sin(\theta) \\ \cos(\theta) \end{bmatrix} \]</span></p>
+<p>where <span class="math inline">\(|\psi\rangle = \cos(\frac{\theta}{2}) |0\rangle + e^{i\phi} \sin(\frac{\theta}{2}) |1\rangle\)</span></p>
+<p>Eigenvectors of Pauli matrices are:</p>
+<p><span class="math display">\[\sigma_x |+\rangle = |+\rangle\ ;\ \sigma_x |-\rangle = -|-\rangle\]</span> <span class="math display">\[\sigma_y |R\rangle = |R\rangle\ ;\ \sigma_y |L\rangle = -|L\rangle\]</span> <span class="math display">\[\sigma_z |0\rangle = |0\rangle\ ;\ \sigma_z |1\rangle = -|1\rangle\]</span></p>
+<p>where <span class="math inline">\(|+\rangle = \frac{1}{\sqrt{2}} (|0\rangle + |1\rangle)\ ;\ |-\rangle = \frac{1}{\sqrt{2}} (|0\rangle - |1\rangle)\ ;\ |R\rangle = \frac{1}{\sqrt{2}} (|0\rangle + i|1\rangle)\)</span> and <span class="math inline">\(|L\rangle = \frac{1}{\sqrt{2}} (|0\rangle - i|1\rangle)\)</span></p>
+<p>The transformations can be represented as: <span class="math display">\[(r, \theta, \phi) \overset{\sigma_x}{\rightarrow} (r, \theta, \pi + \phi)\]</span> <span class="math display">\[(r, \theta, \phi) \overset{\sigma_y}{\rightarrow} (r, \pi - \theta, -\phi)\]</span> <span class="math display">\[(r, \theta, \phi) \overset{\sigma_z}{\rightarrow} (r, \pi - \theta, -\pi - \phi)\]</span></p>
+</section>
+<section id="single-photon-polarization" class="level3">
+<h3 class="anchored" data-anchor-id="single-photon-polarization">Single Photon Polarization</h3>
+<p>Let $|H|0$ and <span class="math inline">\(|V\rangle \equiv |1\rangle\)</span> be the horizontal and vertical polarization states of a photon.</p>
+<p>The diagonal polarization states are <span class="math inline">\(|D\rangle = \frac{1}{\sqrt{2}} (|H\rangle + |V\rangle)\)</span> and <span class="math inline">\(|A\rangle = \frac{1}{\sqrt{2}} (|H\rangle - |V\rangle)\)</span></p>
+<p>The circular polarization states are <span class="math inline">\(|R\rangle = \frac{1}{\sqrt{2}} (|H\rangle + i|V\rangle)\)</span> and <span class="math inline">\(|L\rangle = \frac{1}{\sqrt{2}} (|H\rangle - i|V\rangle)\)</span></p>
+</section>
+<section id="effect-of-optical-elements-on-polarization-states" class="level3">
+<h3 class="anchored" data-anchor-id="effect-of-optical-elements-on-polarization-states">Effect of optical elements on polarization states:</h3>
+<section id="linear-polarizer" class="level4">
+<h4 class="anchored" data-anchor-id="linear-polarizer">Linear Polarizer</h4>
+<p>A linear polarizer transmits light polarized along a particular direction. The transmission axis of the polarizer is the direction of polarization of the transmitted light.</p>
+<p><span class="math display">\[|\psi\rangle \overset{P}{\rightarrow} |\psi'\rangle\]</span></p>
+<p>where <span class="math inline">\(|\psi\rangle = \alpha|H\rangle + \beta|V\rangle\)</span> and <span class="math inline">\(|\psi'\rangle = \alpha|H\rangle\)</span></p>
+<p><span class="math display">\[ P = \begin{bmatrix} \cos^2(\theta) &amp; \cos(\theta)\sin(\theta) \\ \cos(\theta)\sin(\theta) &amp; \sin^2(\theta) \end{bmatrix} \]</span></p>
+<p>where <span class="math inline">\(\theta\)</span> is the angle between the transmission axis of the polarizer and the horizontal axis.</p>
+</section>
+<section id="quarter-wave-plate" class="level4">
+<h4 class="anchored" data-anchor-id="quarter-wave-plate">Quarter Wave Plate</h4>
+<p>A quarter wave plate converts linear polarization to circular polarization and vice versa. The quarter wave plate is oriented at an angle of <span class="math inline">\(\theta\)</span> with respect to the horizontal axis.</p>
+<p><span class="math display">\[ QWP = \begin{bmatrix} \exp(-i\pi/4) &amp; 0 \\ 0 &amp; \exp(i\pi/4) \end{bmatrix} = \frac{1}{\sqrt{2}} \begin{bmatrix} 1 &amp; -i \\ -i &amp; 1 \end{bmatrix} \]</span></p>
+</section>
+<section id="half-wave-plate" class="level4">
+<h4 class="anchored" data-anchor-id="half-wave-plate">Half Wave Plate</h4>
+<p>A half wave plate converts linear polarization to linear polarization and vice versa. The half wave plate is oriented at an angle of <span class="math inline">\(\theta\)</span> with respect to the horizontal axis.</p>
+<p><span class="math display">\[HWP = \sigma_z\]</span></p>
+</section>
+</section>
+<section id="more-operators" class="level3">
+<h3 class="anchored" data-anchor-id="more-operators">More Operators</h3>
+<section id="trace-operator" class="level4">
+<h4 class="anchored" data-anchor-id="trace-operator">Trace operator</h4>
+<p>The trace operator is defined as:</p>
+<p><span class="math display">\[ Tr(\hat{A}) = \sum_i \langle \phi_i | \hat{A} | \phi_i \rangle \]</span></p>
+<p>The inner product of two states <span class="math inline">\(|\psi\rangle\)</span> and <span class="math inline">\(|\phi\rangle\)</span> can be given by:</p>
+<p><span class="math display">\[\langle \psi | \phi \rangle = Tr(|\psi\rangle \langle \phi|)\]</span></p>
+</section>
+<section id="density-operator" class="level4">
+<h4 class="anchored" data-anchor-id="density-operator">Density Operator</h4>
+<p>The density operator is defined as:</p>
+<p><span class="math display">\[ \rho = |\psi\rangle \langle \psi| \]</span></p>
+<p>where <span class="math inline">\(\rho_{ij} = \langle \phi_i | \psi \rangle \langle \psi | \phi_j \rangle\)</span></p>
+<p>The expectation value of an operator <span class="math inline">\(\hat{A}\)</span> is given by:</p>
+<p><span class="math inline">\(\langle \hat{A} \rangle = Tr(\rho \hat{A})\\Proof:\\\)</span> <span class="math inline">\(\langle \hat{A} \rangle = \langle \psi | \hat{A} | \psi \rangle = \sum_{i,j} \rho_{ij} \langle \phi_i | \hat{A} | \phi_j \rangle \\
+= \sum_{i} \rho_{i} \langle \phi_i | \hat{A} \sum_{j} |\phi_j\rangle \langle \phi_j| \phi_j \rangle = \sum_{i} \rho_{i} \langle \phi_i | \hat{A} | \phi_i \rangle \\
+= Tr(\rho \hat{A})\)</span></p>
+<p>The density operator can be written as:</p>
+<p><span class="math display">\[\rho = \frac{1}{2} (I + \vec{r} \cdot \vec{\sigma})\]</span></p>
+<p>where <span class="math inline">\(\vec{r} = (r, \theta, \phi)\)</span></p>
+<p><span class="math display">\[Tr(\rho) = 1\]</span></p>
+<p>Purity of a state is given by: <span class="math display">\[Tr(\rho^2) = \sum_{i} \rho_{ii}^2 \leq 1\]</span> if <span class="math inline">\(Tr(\rho^2) = 1\)</span> then the state is pure else it is mixed. <br> Purity = 1 - <span class="math inline">\(Tr(\rho^2)\)</span></p>
+<p>Von Neumann entropy is given by: <span class="math display">\[S(\rho) = -Tr(\rho \log_2 \rho)\]</span> <span class="math inline">\(S(\rho) = 0\)</span> for pure states and <span class="math inline">\(S(\rho) &gt; 0\)</span> for mixed states.</p>
+</section>
+</section>
+<section id="measurement" class="level3">
+<h3 class="anchored" data-anchor-id="measurement">Measurement</h3>
+<p>Probability of measuring a state <span class="math inline">\(|\psi\rangle\)</span> in the state <span class="math inline">\(|\phi\rangle\)</span> is given by:</p>
+<p><span class="math display">\[P(\phi) = |\langle \phi | \psi \rangle|^2\]</span></p>
+<p>It can be also given using the density operator as:</p>
+<p><span class="math display">\[P(\phi) = \langle \phi | \rho | \phi \rangle = Tr(\rho |\phi\rangle \langle \phi|)\]</span></p>
+<p><span class="math display">\[ P(\phi) = Tr(\rho \Pi_\phi) \]</span></p>
+<p>where <span class="math inline">\(\Pi_\phi = |\phi\rangle \langle \phi|\)</span> is the projection operator.</p>
+<p><span class="math display">\[\sum_{\phi} \Pi_\phi = I\]</span></p>
+<p><span class="math display">\[\Pi_\phi \Pi_\psi = \delta_{\phi\psi} \Pi_\phi\]</span></p>
+<p>The expectation value of an operator <span class="math inline">\(\hat{A}\)</span> is given by:</p>
+<p><span class="math display">\[\langle \hat{A} \rangle = \sum_{\phi} P(\phi) \langle \phi | \hat{A} | \phi \rangle = Tr(\rho \hat{A})\]</span></p>
+<p>The density operator after measurement is given by:</p>
+<p><span class="math display">\[ \rho' = \frac{\Pi_\phi \rho \Pi_\phi}{P(\phi)} = \frac{\Pi_\phi \rho \Pi_\phi}{Tr(\rho \Pi_\phi)} \]</span></p>
+</section>
+<section id="positive-operator-valued-measure-povm" class="level3">
+<h3 class="anchored" data-anchor-id="positive-operator-valued-measure-povm">Positive Operator Valued Measure (POVM)</h3>
+<p>A POVM is a set of operators <span class="math inline">\(\{E_i\}\)</span> such that <span class="math inline">\(E_i \geq 0\)</span> and <span class="math inline">\(\sum_i E_i = I\)</span> where <span class="math inline">\(I\)</span> is the identity operator.</p>
+<p>The probability of measuring a state <span class="math inline">\(|\psi\rangle\)</span> in the state <span class="math inline">\(|\phi\rangle\)</span> is given by:</p>
+<p><span class="math display">\[P(\phi) = \sum_i \langle \phi | E_i | \phi \rangle = Tr(\rho E_i)\]</span></p>
+</section>
+<section id="multiple-quantum-systems" class="level3">
+<h3 class="anchored" data-anchor-id="multiple-quantum-systems">Multiple Quantum Systems</h3>
+<p>2 level system =&gt; qubit</p>
+<p>d level system =&gt; qudit</p>
+<p>The Hilbert space of a composite system is the tensor product of the Hilbert spaces of the individual systems.</p>
+<p><span class="math display">\[\mathcal{H} = \mathcal{H}_1 \otimes \mathcal{H}_2\]</span></p>
+<p>The basis vectors of the composite system are given by:</p>
+<p><span class="math display">\[|\phi_i\rangle \otimes |\psi_j\rangle = |\phi_i\psi_j\rangle\]</span></p>
+<p>The basis vectors of the composite system are orthonormal if the basis vectors of the individual systems are orthonormal.</p>
+<p><span class="math display">\[\langle \phi_i | \phi_j \rangle = \delta_{ij}\ ;\ \langle \psi_i | \psi_j \rangle = \delta_{ij}\]</span></p>
+<p>The basis vectors of the composite system are complete if the basis vectors of the individual systems are complete.</p>
+<p><span class="math display">\[\sum_{i,j} |\phi_i\rangle \langle \phi_i | \otimes |\psi_j\rangle \langle \psi_j | = I\]</span></p>
+<p>The density operator of the composite system is given by:</p>
+<p><span class="math display">\[\rho = \rho_1 \otimes \rho_2\]</span></p>
+<p>The expectation value of an operator <span class="math inline">\(\hat{A}\)</span> is given by:</p>
+<p><span class="math display">\[\langle \hat{A} \rangle = Tr(\rho \hat{A}) = Tr(\rho_1 \otimes \rho_2 \hat{A}_1 \otimes \hat{A}_2) = Tr(\rho_1 \hat{A}_1) Tr(\rho_2 \hat{A}_2)\]</span></p>
+<p>Generic States:</p>
+<p><span class="math display">\[|\psi\rangle_a = \sum_{i} c_{i} |\phi_i\rangle\ ;\ |\psi\rangle_b = \sum_{j} d_{j} |\psi_j\rangle\
+where\ c_{ij} \in \mathbb{C}\]</span></p>
+<p><span class="math display">\[ |\psi\rangle_{ab} = \sum_{i,j} c_{ij} |\phi_i\rangle \otimes |\psi_j\rangle \]</span> e.g.&nbsp;<span class="math inline">\(|\psi\rangle_{ab} = \frac{1}{2} (|00\rangle + |01\rangle + |10\rangle + |11\rangle)\\
+= \frac{1}{\sqrt{2}} (|0\rangle_a + |1\rangle_a) \otimes \frac{1}{\sqrt{2}} (|0\rangle_b + |1\rangle_b)\\
+= |\psi\rangle_a \otimes |\psi\rangle_b\)</span></p>
+<p>Non-generic States (non-separable): <span class="math display">\[|\psi\rangle_{ab} \neq |\psi\rangle_a \otimes |\psi\rangle_b\]</span></p>
+<p>e.g.&nbsp;<span class="math inline">\(|\psi\rangle_{ab} = \alpha|00\rangle + \beta|11\rangle\)</span></p>
+<p>They are called entangled states.</p>
+</section>
+<section id="bell-states" class="level3">
+<h3 class="anchored" data-anchor-id="bell-states">Bell States</h3>
+<p>The Bell states are given by:</p>
+<p><span class="math display">\[ |\Phi^+\rangle = \frac{1}{\sqrt{2}} (|00\rangle + |11\rangle)\]</span> <span class="math display">\[ |\Phi^-\rangle = \frac{1}{\sqrt{2}} (|00\rangle - |11\rangle)\]</span> <span class="math display">\[ |\Psi^+\rangle = \frac{1}{\sqrt{2}} (|01\rangle + |10\rangle)\]</span> <span class="math display">\[ |\Psi^-\rangle = \frac{1}{\sqrt{2}} (|01\rangle - |10\rangle)\]</span></p>
+<p><span class="math inline">\(|\Phi^+\rangle\)</span> and <span class="math inline">\(|\Phi^-\rangle\)</span> are symmetric under exchange of qubits.</p>
+<p><span class="math inline">\(|\Psi^+\rangle\)</span> and <span class="math inline">\(|\Psi^-\rangle\)</span> are anti-symmetric under exchange of qubits.</p>
+<p>Probability of measuring a Bell state <span class="math inline">\(|\Phi^+\rangle\)</span> in the state <span class="math inline">\(|00\rangle\)</span> is given by: &gt; <span class="math inline">\(P(00) = |\langle 00 | \Phi^+ \rangle|^2 = \frac{1}{2}\)</span></p>
+<p>This randomness of Bell states is used in Quantum Technologies.</p>
+<p>Bell states are eigenstates of the Pauli operators of the composite systems with eigenvalues = +-1</p>
+<p>Entanglement persistes in different basis</p>
+</section>
+<section id="entanglement-quantification" class="level3">
+<h3 class="anchored" data-anchor-id="entanglement-quantification">Entanglement Quantification</h3>
+<section id="partial-projection" class="level4">
+<h4 class="anchored" data-anchor-id="partial-projection">Partial Projection</h4>
+<p>Partial projection of a state <span class="math inline">\(|\psi\rangle\)</span> is given by:</p>
+<p><span class="math display">\[ \Pi_a = \sum_{i} |\phi_i\rangle \langle \phi_i | \otimes I_b \]</span></p>
+</section>
+<section id="partial-trace" class="level4">
+<h4 class="anchored" data-anchor-id="partial-trace">Partial Trace</h4>
+<p>Partial trace of a state <span class="math inline">\(|\psi\rangle\)</span> is given by:</p>
+<p><span class="math display">\[ \rho_a = Tr_b(|\psi\rangle \langle \psi|) = \sum_{i} \langle \phi_i | \psi \rangle \langle \psi | \phi_i \rangle \]</span> <span class="math display">\[ \rho_b = Tr_a(|\psi\rangle \langle \psi|) = \sum_{j} \langle \psi_j | \psi \rangle \langle \psi | \psi_j \rangle \]</span></p>
+</section>
+</section>
+<section id="qubit-system" class="level3">
+<h3 class="anchored" data-anchor-id="qubit-system">3 Qubit System</h3>
+<p>The basis vectors of the composite system are given by:</p>
+<p><span class="math display">\[|\phi_i\rangle \otimes |\psi_j\rangle \otimes |\chi_k\rangle = |\phi_i\psi_j\chi_k\rangle\]</span></p>
+<section id="ghz-state" class="level4">
+<h4 class="anchored" data-anchor-id="ghz-state">GHZ State</h4>
+<p>The GHZ state is given by:</p>
+<p><span class="math display">\[ |\psi\rangle_{GHZ} = \frac{1}{\sqrt{2}} (|000\rangle + |111\rangle) \]</span></p>
+<p>The state is maximally entangled.</p>
+</section>
+<section id="w-state" class="level4">
+<h4 class="anchored" data-anchor-id="w-state">W State</h4>
+<p>The W state is given by:</p>
+<p><span class="math display">\[ |\psi\rangle_{W} = \alpha |001\rangle + \beta |010\rangle + \gamma |100\rangle \]</span></p>
+</section>
+</section>
+<section id="entanglement-entropy-von-neumann-entropy" class="level3">
+<h3 class="anchored" data-anchor-id="entanglement-entropy-von-neumann-entropy">Entanglement Entropy / Von Neumann Entropy</h3>
+<p>The entanglement entropy of a state <span class="math inline">\(|\psi\rangle\)</span> is given by:</p>
+<p><span class="math display">\[ S(\rho_a) = -Tr(\rho_a \log_2 \rho_a) \]</span></p>
+<p>where <span class="math inline">\(\rho_a = Tr_b(|\psi\rangle \langle \psi|)\)</span></p>
+</section>
+<section id="schmidt-decomposition" class="level3">
+<h3 class="anchored" data-anchor-id="schmidt-decomposition">Schmidt Decomposition</h3>
+<p>The Schmidt decomposition of a state <span class="math inline">\(|\psi\rangle\)</span> is given by:</p>
+<p><span class="math display">\[ |\psi\rangle = \sum_{i} \sqrt{\lambda_i} |\phi_i\rangle \otimes |\psi_i\rangle \]</span></p>
+<p>where <span class="math inline">\(\lambda_i\)</span> are the eigenvalues of <span class="math inline">\(\rho_a\)</span> and <span class="math inline">\(|\phi_i\rangle\)</span> and <span class="math inline">\(|\psi_i\rangle\)</span> are the eigenvectors of <span class="math inline">\(\rho_a\)</span> and <span class="math inline">\(\rho_b\)</span> respectively.</p>
+<p><span class="math display">\[\rho_a = \sum_{i} \lambda_i |\phi_i\rangle \langle \phi_i |\\
+\rho_b = \sum_{i} \lambda_i |\psi_i\rangle \langle \psi_i |\]</span></p>
+<p><span class="math display">\[ S(\rho_a) = -\sum_{i} \lambda_i \log_2 \lambda_i = S(\rho_b) \]</span></p>
+</section>
+</section>
+
+
+
+</main> <!-- /main -->
+<script id="quarto-html-after-body" type="application/javascript">
+window.document.addEventListener("DOMContentLoaded", function (event) {
+  const toggleBodyColorMode = (bsSheetEl) => {
+    const mode = bsSheetEl.getAttribute("data-mode");
+    const bodyEl = window.document.querySelector("body");
+    if (mode === "dark") {
+      bodyEl.classList.add("quarto-dark");
+      bodyEl.classList.remove("quarto-light");
+    } else {
+      bodyEl.classList.add("quarto-light");
+      bodyEl.classList.remove("quarto-dark");
+    }
+  }
+  const toggleBodyColorPrimary = () => {
+    const bsSheetEl = window.document.querySelector("link#quarto-bootstrap");
+    if (bsSheetEl) {
+      toggleBodyColorMode(bsSheetEl);
+    }
+  }
+  toggleBodyColorPrimary();  
+  const icon = "";
+  const anchorJS = new window.AnchorJS();
+  anchorJS.options = {
+    placement: 'right',
+    icon: icon
+  };
+  anchorJS.add('.anchored');
+  const isCodeAnnotation = (el) => {
+    for (const clz of el.classList) {
+      if (clz.startsWith('code-annotation-')) {                     
+        return true;
+      }
+    }
+    return false;
+  }
+  const clipboard = new window.ClipboardJS('.code-copy-button', {
+    text: function(trigger) {
+      const codeEl = trigger.previousElementSibling.cloneNode(true);
+      for (const childEl of codeEl.children) {
+        if (isCodeAnnotation(childEl)) {
+          childEl.remove();
+        }
+      }
+      return codeEl.innerText;
+    }
+  });
+  clipboard.on('success', function(e) {
+    // button target
+    const button = e.trigger;
+    // don't keep focus
+    button.blur();
+    // flash "checked"
+    button.classList.add('code-copy-button-checked');
+    var currentTitle = button.getAttribute("title");
+    button.setAttribute("title", "Copied!");
+    let tooltip;
+    if (window.bootstrap) {
+      button.setAttribute("data-bs-toggle", "tooltip");
+      button.setAttribute("data-bs-placement", "left");
+      button.setAttribute("data-bs-title", "Copied!");
+      tooltip = new bootstrap.Tooltip(button, 
+        { trigger: "manual", 
+          customClass: "code-copy-button-tooltip",
+          offset: [0, -8]});
+      tooltip.show();    
+    }
+    setTimeout(function() {
+      if (tooltip) {
+        tooltip.hide();
+        button.removeAttribute("data-bs-title");
+        button.removeAttribute("data-bs-toggle");
+        button.removeAttribute("data-bs-placement");
+      }
+      button.setAttribute("title", currentTitle);
+      button.classList.remove('code-copy-button-checked');
+    }, 1000);
+    // clear code selection
+    e.clearSelection();
+  });
+  function tippyHover(el, contentFn, onTriggerFn, onUntriggerFn) {
+    const config = {
+      allowHTML: true,
+      maxWidth: 500,
+      delay: 100,
+      arrow: false,
+      appendTo: function(el) {
+          return el.parentElement;
+      },
+      interactive: true,
+      interactiveBorder: 10,
+      theme: 'quarto',
+      placement: 'bottom-start',
+    };
+    if (contentFn) {
+      config.content = contentFn;
+    }
+    if (onTriggerFn) {
+      config.onTrigger = onTriggerFn;
+    }
+    if (onUntriggerFn) {
+      config.onUntrigger = onUntriggerFn;
+    }
+    window.tippy(el, config); 
+  }
+  const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
+  for (var i=0; i<noterefs.length; i++) {
+    const ref = noterefs[i];
+    tippyHover(ref, function() {
+      // use id or data attribute instead here
+      let href = ref.getAttribute('data-footnote-href') || ref.getAttribute('href');
+      try { href = new URL(href).hash; } catch {}
+      const id = href.replace(/^#\/?/, "");
+      const note = window.document.getElementById(id);
+      return note.innerHTML;
+    });
+  }
+  const xrefs = window.document.querySelectorAll('a.quarto-xref');
+  const processXRef = (id, note) => {
+    // Strip column container classes
+    const stripColumnClz = (el) => {
+      el.classList.remove("page-full", "page-columns");
+      if (el.children) {
+        for (const child of el.children) {
+          stripColumnClz(child);
+        }
+      }
+    }
+    stripColumnClz(note)
+    if (id === null || id.startsWith('sec-')) {
+      // Special case sections, only their first couple elements
+      const container = document.createElement("div");
+      if (note.children && note.children.length > 2) {
+        container.appendChild(note.children[0].cloneNode(true));
+        for (let i = 1; i < note.children.length; i++) {
+          const child = note.children[i];
+          if (child.tagName === "P" && child.innerText === "") {
+            continue;
+          } else {
+            container.appendChild(child.cloneNode(true));
+            break;
+          }
+        }
+        if (window.Quarto?.typesetMath) {
+          window.Quarto.typesetMath(container);
+        }
+        return container.innerHTML
+      } else {
+        if (window.Quarto?.typesetMath) {
+          window.Quarto.typesetMath(note);
+        }
+        return note.innerHTML;
+      }
+    } else {
+      // Remove any anchor links if they are present
+      const anchorLink = note.querySelector('a.anchorjs-link');
+      if (anchorLink) {
+        anchorLink.remove();
+      }
+      if (window.Quarto?.typesetMath) {
+        window.Quarto.typesetMath(note);
+      }
+      // TODO in 1.5, we should make sure this works without a callout special case
+      if (note.classList.contains("callout")) {
+        return note.outerHTML;
+      } else {
+        return note.innerHTML;
+      }
+    }
+  }
+  for (var i=0; i<xrefs.length; i++) {
+    const xref = xrefs[i];
+    tippyHover(xref, undefined, function(instance) {
+      instance.disable();
+      let url = xref.getAttribute('href');
+      let hash = undefined; 
+      if (url.startsWith('#')) {
+        hash = url;
+      } else {
+        try { hash = new URL(url).hash; } catch {}
+      }
+      if (hash) {
+        const id = hash.replace(/^#\/?/, "");
+        const note = window.document.getElementById(id);
+        if (note !== null) {
+          try {
+            const html = processXRef(id, note.cloneNode(true));
+            instance.setContent(html);
+          } finally {
+            instance.enable();
+            instance.show();
+          }
+        } else {
+          // See if we can fetch this
+          fetch(url.split('#')[0])
+          .then(res => res.text())
+          .then(html => {
+            const parser = new DOMParser();
+            const htmlDoc = parser.parseFromString(html, "text/html");
+            const note = htmlDoc.getElementById(id);
+            if (note !== null) {
+              const html = processXRef(id, note);
+              instance.setContent(html);
+            } 
+          }).finally(() => {
+            instance.enable();
+            instance.show();
+          });
+        }
+      } else {
+        // See if we can fetch a full url (with no hash to target)
+        // This is a special case and we should probably do some content thinning / targeting
+        fetch(url)
+        .then(res => res.text())
+        .then(html => {
+          const parser = new DOMParser();
+          const htmlDoc = parser.parseFromString(html, "text/html");
+          const note = htmlDoc.querySelector('main.content');
+          if (note !== null) {
+            // This should only happen for chapter cross references
+            // (since there is no id in the URL)
+            // remove the first header
+            if (note.children.length > 0 && note.children[0].tagName === "HEADER") {
+              note.children[0].remove();
+            }
+            const html = processXRef(null, note);
+            instance.setContent(html);
+          } 
+        }).finally(() => {
+          instance.enable();
+          instance.show();
+        });
+      }
+    }, function(instance) {
+    });
+  }
+      let selectedAnnoteEl;
+      const selectorForAnnotation = ( cell, annotation) => {
+        let cellAttr = 'data-code-cell="' + cell + '"';
+        let lineAttr = 'data-code-annotation="' +  annotation + '"';
+        const selector = 'span[' + cellAttr + '][' + lineAttr + ']';
+        return selector;
+      }
+      const selectCodeLines = (annoteEl) => {
+        const doc = window.document;
+        const targetCell = annoteEl.getAttribute("data-target-cell");
+        const targetAnnotation = annoteEl.getAttribute("data-target-annotation");
+        const annoteSpan = window.document.querySelector(selectorForAnnotation(targetCell, targetAnnotation));
+        const lines = annoteSpan.getAttribute("data-code-lines").split(",");
+        const lineIds = lines.map((line) => {
+          return targetCell + "-" + line;
+        })
+        let top = null;
+        let height = null;
+        let parent = null;
+        if (lineIds.length > 0) {
+            //compute the position of the single el (top and bottom and make a div)
+            const el = window.document.getElementById(lineIds[0]);
+            top = el.offsetTop;
+            height = el.offsetHeight;
+            parent = el.parentElement.parentElement;
+          if (lineIds.length > 1) {
+            const lastEl = window.document.getElementById(lineIds[lineIds.length - 1]);
+            const bottom = lastEl.offsetTop + lastEl.offsetHeight;
+            height = bottom - top;
+          }
+          if (top !== null && height !== null && parent !== null) {
+            // cook up a div (if necessary) and position it 
+            let div = window.document.getElementById("code-annotation-line-highlight");
+            if (div === null) {
+              div = window.document.createElement("div");
+              div.setAttribute("id", "code-annotation-line-highlight");
+              div.style.position = 'absolute';
+              parent.appendChild(div);
+            }
+            div.style.top = top - 2 + "px";
+            div.style.height = height + 4 + "px";
+            div.style.left = 0;
+            let gutterDiv = window.document.getElementById("code-annotation-line-highlight-gutter");
+            if (gutterDiv === null) {
+              gutterDiv = window.document.createElement("div");
+              gutterDiv.setAttribute("id", "code-annotation-line-highlight-gutter");
+              gutterDiv.style.position = 'absolute';
+              const codeCell = window.document.getElementById(targetCell);
+              const gutter = codeCell.querySelector('.code-annotation-gutter');
+              gutter.appendChild(gutterDiv);
+            }
+            gutterDiv.style.top = top - 2 + "px";
+            gutterDiv.style.height = height + 4 + "px";
+          }
+          selectedAnnoteEl = annoteEl;
+        }
+      };
+      const unselectCodeLines = () => {
+        const elementsIds = ["code-annotation-line-highlight", "code-annotation-line-highlight-gutter"];
+        elementsIds.forEach((elId) => {
+          const div = window.document.getElementById(elId);
+          if (div) {
+            div.remove();
+          }
+        });
+        selectedAnnoteEl = undefined;
+      };
+        // Handle positioning of the toggle
+    window.addEventListener(
+      "resize",
+      throttle(() => {
+        elRect = undefined;
+        if (selectedAnnoteEl) {
+          selectCodeLines(selectedAnnoteEl);
+        }
+      }, 10)
+    );
+    function throttle(fn, ms) {
+    let throttle = false;
+    let timer;
+      return (...args) => {
+        if(!throttle) { // first call gets through
+            fn.apply(this, args);
+            throttle = true;
+        } else { // all the others get throttled
+            if(timer) clearTimeout(timer); // cancel #2
+            timer = setTimeout(() => {
+              fn.apply(this, args);
+              timer = throttle = false;
+            }, ms);
+        }
+      };
+    }
+      // Attach click handler to the DT
+      const annoteDls = window.document.querySelectorAll('dt[data-target-cell]');
+      for (const annoteDlNode of annoteDls) {
+        annoteDlNode.addEventListener('click', (event) => {
+          const clickedEl = event.target;
+          if (clickedEl !== selectedAnnoteEl) {
+            unselectCodeLines();
+            const activeEl = window.document.querySelector('dt[data-target-cell].code-annotation-active');
+            if (activeEl) {
+              activeEl.classList.remove('code-annotation-active');
+            }
+            selectCodeLines(clickedEl);
+            clickedEl.classList.add('code-annotation-active');
+          } else {
+            // Unselect the line
+            unselectCodeLines();
+            clickedEl.classList.remove('code-annotation-active');
+          }
+        });
+      }
+  const findCites = (el) => {
+    const parentEl = el.parentElement;
+    if (parentEl) {
+      const cites = parentEl.dataset.cites;
+      if (cites) {
+        return {
+          el,
+          cites: cites.split(' ')
+        };
+      } else {
+        return findCites(el.parentElement)
+      }
+    } else {
+      return undefined;
+    }
+  };
+  var bibliorefs = window.document.querySelectorAll('a[role="doc-biblioref"]');
+  for (var i=0; i<bibliorefs.length; i++) {
+    const ref = bibliorefs[i];
+    const citeInfo = findCites(ref);
+    if (citeInfo) {
+      tippyHover(citeInfo.el, function() {
+        var popup = window.document.createElement('div');
+        citeInfo.cites.forEach(function(cite) {
+          var citeDiv = window.document.createElement('div');
+          citeDiv.classList.add('hanging-indent');
+          citeDiv.classList.add('csl-entry');
+          var biblioDiv = window.document.getElementById('ref-' + cite);
+          if (biblioDiv) {
+            citeDiv.innerHTML = biblioDiv.innerHTML;
+          }
+          popup.appendChild(citeDiv);
+        });
+        return popup.innerHTML;
+      });
+    }
+  }
+});
+</script>
+<nav class="page-navigation">
+  <div class="nav-page nav-page-previous">
+      <a href="./index.html" class="pagination-link" aria-label="About">
+        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text">About</span>
+      </a>          
+  </div>
+  <div class="nav-page nav-page-next">
+      <a href="./qoptics.html" class="pagination-link" aria-label="Quantum Optics">
+        <span class="nav-page-text">Quantum Optics</span> <i class="bi bi-arrow-right-short"></i>
+      </a>
+  </div>
+</nav>
+</div> <!-- /content -->
+
+
+
+
+</body></html>
