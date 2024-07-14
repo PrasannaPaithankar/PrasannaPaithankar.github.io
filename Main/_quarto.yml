@@ -11,6 +11,7 @@ website:
       - Research.qmd
       - Projects.qmd
       - Misc.qmd
+      # - Blog.qmd
       - href: Assets/Resume_Prasanna_Paithankar.pdf
         icon: bi-filetype-pdf
         text: CV

@@ -33,7 +33,6 @@ Abstract: Microring resonators (MRRs) are the most sought on-chip optical compon
 <hr>
 
 #### COPaQ 2022, Indian Institute of Technology Roorkee
-
 ### Tunable Graphene-Integrated Cascaded Silicon Microring Resonators
 Prasanna Paithankar, Sridhar Singhal, Sauradeep Kar & Shailendra K Varshney
 
