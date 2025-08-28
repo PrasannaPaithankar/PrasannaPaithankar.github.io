@@ -1,5 +1,0 @@
-# pQuantum Computation {.unnumbered}
-
-<div style="text-align: justify">
-
-</div>

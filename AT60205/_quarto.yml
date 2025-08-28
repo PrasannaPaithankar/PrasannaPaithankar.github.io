@@ -27,8 +27,10 @@ bibliography: references.bib
 format:
   html:
     theme: cosmo
+    page-layout: full
   pdf:
     documentclass: scrreprt
+  
 
 
 

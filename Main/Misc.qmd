@@ -1,5 +1,7 @@
 ---
 title: "Miscellaneous"
+toc: false
+# page-layout: full
 ---
 <style>
   p {
@@ -14,24 +16,30 @@ title: "Miscellaneous"
 <hr>
   
 ### Course Notes & Codes
-#### [<i class="bi bi-journal-bookmark"></i> \ \ photonic Quantum Information Technologies (AT60205) Autumn 2023](AT60205/index.html)
+#### [<i class="bi bi-github"></i> \ \ Graph Machine Learning (AI60007) Autumn 2024](https://github.com/PrasannaPaithankar/Graph-Machine-Learning-Aut-24)
+#### [<i class="bi bi-github"></i> \ \ Natural Language Processing (CS60075) Autumn 2024](https://github.com/PrasannaPaithankar/Natural-Language-Processing-Aut-24)
 #### [<i class="bi bi-github"></i> \ \ Database Management Systems Laboratory (CS39202) Spring 2024](https://github.com/PrasannaPaithankar/DBMS-Laboratory-Spr-24)
 #### [<i class="bi bi-github"></i> \ \ Computer Networks Laboratory (CS39006) Spring 2024](https://github.com/PrasannaPaithankar/Computer-Networks-Laboratory-Spr-24)
 #### [<i class="bi bi-github"></i> \ \ Operating Systems Laboratory (CS39002) Spring 2024](https://github.com/PrasannaPaithankar/Operating-Systems-Laboratory-Spr-24)
-
-### Handouts
-#### <i class="bi bi-filetype-pdf"></i> \ \ Markovian Decision Process in Bipedal Locomotion
-#### <i class="bi bi-filetype-pdf"></i> \ \ Analysis of Physical Qubit Systems
+#### [<i class="bi bi-journal-bookmark"></i> \ \ photonic Quantum Information Technologies (AT60205) Autumn 2023](AT60205/index.html)
 
 ### Lectures
+#### [<i class="bi bi-journal-code"></i> \ \ Soft Landing Optimal Control using Convex Optimization](Blogs/cvx.qmd)
+##### [11/2024] Convex Optimization (MA60213) Autumn 2024
 #### <i class="bi bi-file-earmark-easel"></i> \ \ Adversarial Papayas: Introduction to Machine Learning
 ##### [12/2023] Winter School of AI & Robotics 2023-24
 #### <i class="bi bi-file-earmark-easel"></i> \ \ The Big Picture & Some Nicheness: The Final Chapter
 ##### [03/2023] Winter School of AI & Robotics 2022-23
 
+### Handouts
+#### <i class="bi bi-filetype-pdf"></i> \ \ Markovian Decision Process in Bipedal Locomotion
+#### <i class="bi bi-filetype-pdf"></i> \ \ Analysis of Physical Qubit Systems
+
 <!-- ### More
 #### <i class="bi bi-file-earmark-text"></i> \ \ [Rust Dump](Rust-Dump.html)
 #### <i class="bi bi-file-earmark-text"></i> \ \ [CTF Writeups](CTF-Writeups.html) -->
+### [<i class="bi bi-cpu"></i> \ \ HPC Club](http://www.hpc.iitkgp.ac.in/)
+
 ### [<i class="bi bi-laptop"></i> \ \ Codeforces Handle](https://codeforces.com/profile/PrasannaPaithankar)
 
 ### [<i class="bi bi-box-arrow-up-right"></i>  \ GPG Public Key](Assets/pub-key.txt)
@@ -43,6 +51,8 @@ title: "Miscellaneous"
 
 <div style="font-size: 12px; color: grey; text-align: right; ">
 Prasanna Paithankar | Deptarment of Computer Science & Engineering | Indian Insitute of Technology Kharagpur<br>Made using <a href="https://quarto.org" style="color: #007bff;">Quarto</a> </div>
+<div style="font-size: 12px; color: grey; ">
+Last updated: {{< var last_updated >}}</div>
 
 
 

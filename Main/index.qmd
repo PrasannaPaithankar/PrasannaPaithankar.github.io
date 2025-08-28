@@ -1,5 +1,7 @@
 ---
 title: Prasanna Paithankar
+toc: false
+# page-layout: full
 ---
 
 
@@ -16,17 +18,24 @@ title: Prasanna Paithankar
 </style>
 <!-- insert image -->
 <!-- center align -->
-<img src="Assets/CoPAQ-cropped.jpg" alt="Prasanna Paithankar" style="display: block; margin-left: auto; margin-right: auto; width: 20%; border-radius: 50%;">
 
-I am currently a senior undergraduate at Indian Institute of Technology Kharagpur, pursuing a BTech+MTech in Computer Science and Technology.
+<img src="Assets/potrait.jpg" alt="Prasanna Paithankar" style="display: block; margin-left: auto; margin-right: auto; width: 25%; border-radius: 50%;">
 
-My general research interests lie in field of photonic based computation, pseudorandomness and statistical learning theory. I am an undergraduate researcher at Fiber Optics and Nano and Quantum Photonics Group (FONQP), Advanced Photonics Laboratory (APL), IIT Kharagpur, under the guidance of [Professor Shailendra Varshney](https://scholar.google.co.in/citations?user=7KsrPeEAAAAJ&hl=en).
+<br>
+I am currently a senior undergraduate at Indian Institute of Technology (IIT) Kharagpur, pursuing a BTech+MTech in Computer Science and Engineering.
 
-I also make financial softwares and scripts for aiding Chartered Accountants and Tax professionals and one would find me either swimming at TSG pool or in APL.
+I am pursuing my Bachelor's Thesis under the supervision of [Professor Partha Pratim Chakrabarti](https://cse.iitkgp.ac.in/~ppchak/) and [Professor Shailendra Varshney](https://scholar.google.co.in/citations?user=7KsrPeEAAAAJ&hl=en). The focus is on optimizing the performance of computational electromagnetics (and similar domains in physics) using AI.
+
+I also work on pseudorandomness and random number generator architectures at [Fiber Optics and Nano and Quantum Photonics (FONQP) Group](https://fonqp.github.io), Advanced Photonics Laboratory (APL), IIT Kharagpur.
+
 <!-- Inset a small divder line -->
 <hr>
 
 ### News
+[11/07/25] Completed Quant Modelling Summer Internship at JPMorgan Chase & Co.
+
+[15/10/24] Indian Mobile Congress 2024: Exhibitor for Department of Science & Technology, Government of India. Presented our TRNG patent.
+
 [10/10/23] FiO + LS 2023 Conference: Manuscript titled "Femtosecond Laser based Post-Processing Free True Random Number Generator" has been present at FiO+LS 2023 conference at Tacoma, Washington.
 
 [30/06/23] IJPAP Revew Article: Review article titled "Microring Resonators and its Applications" has been published in Indian Journal of Pure and Applied Physics (IJPAP) Vol.61(07).
@@ -42,4 +51,4 @@ Email: <a href="mailto:paithankarprasanna@gmail.com">paithankarprasanna@gmail.co
 <div style="font-size: 12px; color: grey; text-align: right; ">
 Prasanna Paithankar | Deptarment of Computer Science & Engineering | Indian Insitute of Technology Kharagpur<br>Made using [Quarto](https://quarto.org/) </div>
 <div style="font-size: 12px; color: grey; ">
-Last updated: June 2024</div>
+Last updated: {{< var last_updated >}}</div>

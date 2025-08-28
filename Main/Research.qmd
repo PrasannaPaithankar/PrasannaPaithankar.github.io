@@ -1,5 +1,7 @@
 ---
 title: "Research"
+toc: false
+# page-layout: full
 ---
 <style>
   p {
@@ -19,7 +21,7 @@ title: "Research"
 Amritash Sharma <sup>&dagger;</sup>, Prasanna Paithankar <sup>&dagger;</sup>, Shailendra K Varshney
 
 Abstract: We experimentally demonstrate a high-entropy source based on the intensity fluctuation in a femtosecond laser. The setup successfully passes statistical tests without any post-processing. The generator can be potentially used for quantum communication and cryptography.<br>
-[<i class="bi bi-easel2"></i> Poster](Assets/JTu5A.57-1.pdf)\ \ |\ \ [<i class="bi bi-card-heading"></i> Abstract](Assets/FiO_RNG_Abstract.pdf)\ \ |\ \ [<i class="bi bi-file-earmark-plus"></i> Supplementary](FiO.qmd)
+[<i class="bi bi-easel2"></i> Poster](Assets/JTu5A.57-1.pdf)\ \ |\ \ [<i class="bi bi-card-heading"></i> Abstract](Assets/FiO_RNG_Abstract.pdf)\ \
 
 <hr>
 
@@ -42,3 +44,5 @@ Abstract: We theoretically and numerically demonstrate a tunable graphene-integr
 <hr>
 <div style="font-size: 12px; color: grey; text-align: right; ">
 Prasanna Paithankar | Deptarment of Computer Science & Engineering | Indian Insitute of Technology Kharagpur<br>Made using [Quarto](https://quarto.org/) </div>
+<div style="font-size: 12px; color: grey; ">
+Last updated: {{< var last_updated >}}</div>

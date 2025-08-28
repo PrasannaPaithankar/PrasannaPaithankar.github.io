@@ -14,7 +14,7 @@ title: "Dabble Wabble"
 </style>
 <hr>
 
-<a href="Blogs/Compilers-Interpreters.html" style="color: inherit; text-decoration: none;">
+<!-- <a href="Blogs/Compilers-Interpreters.html" style="color: inherit; text-decoration: none;">
 
 ### Compilers & Interpreters
 We experimentally demonstrate a high-entropy source based on the intensity fluctuation in a femtosecond laser. The setup successfully passes statistical tests without any post-processing. The generator can be potentially used for quantum communication and cryptography.
@@ -30,8 +30,12 @@ lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor i
 
 ### Hobby Electronics
 lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
-</a>
+</a> -->
+
+[Dive into POSIX IPC Objects](Blogs/posix-ipc.qmd)
 
 <hr>
 <div style="font-size: 12px; color: grey; text-align: right; ">
 Prasanna Paithankar | Deptarment of Computer Science & Engineering | Indian Insitute of Technology Kharagpur<br>Made using [Quarto](https://quarto.org/) </div>
+<div style="font-size: 12px; color: grey; ">
+Last updated: {{< var last_updated >}}</div>

@@ -1,0 +1,56 @@
+---
+title: "Dive into POSIX IPC Objects"
+toc: false
+page-layout: full
+---
+
+<!-- make the whole document justified text -->
+<style>
+  body {
+    text-align: justify;
+  }
+</style>
+
+<!-- authors -->
+ 
+*A top down approach*<br>
+
+***
+
+Soft landing constitutes the concluding step of a planetary EDL (entry, descent, and landing) and is also known as the powered descent landing stage.  During the powered descent phase, the ship is manoeuvred as near as feasible to a designated site on the planet's surface via thrusters that offer control authority. When the vehicle "soft lands," or lands with zero velocity in relation to the surface, this phase comes to an end. Under thrust and state limitations, our goal is to create a **fuel-optimal thrust profile as a function of time** that gets the vehicle to its intended destination. 
+
+The control restrictions in the original version of the soft-landing powered-descent guiding issue make it a **nonconvex finite horizon optimal control problem**. The guiding algorithm must provide legitimate thrust vectors with a nonzero minimum and maximum on the thrust magnitude since the descent thrusters cannot be throttled off after initiation. This is a non-convex constraint on the control input. Another cause of nonconvexity is the fact that onboard sensors for terrain-relative navigation often call for particular viewing orientations, which limit the permitted spacecraft orientations and, consequently, the thrust vector pointing direction. 
+
+Finding a **convex relaxation** of the original optimum control issue and demonstrating that an optimal solution to the relaxed problem is likewise optimal for the original problem are the main objectives.
+
+Non-convex problems can be convexified in 2 ways:
+
+1. Restrict the set of feasible solutions to a convex subset of the feasible set.
+2. Relax the set of feasible solutions to a convex set containing the original set of feasible solutions.
+
+We follow the second method to covexify our problem and prove that the relaxed problem achieves the same optimal value as the original problem. 
+
+## POSIX IPC API
+<!-- explain ipc calls and lsipc, ipcrm, ipcmk -->
+
+## Unwrapping\ \ <i>_calls()</i>
+### Message Queues
+### Semaphores
+### Shared Memory
+
+<!-- use strace -->
+
+## Appendix
+### System V IPC
+
+<!-- Thank you -->
+## Thank you!
+
+For queries, suggestions, or contributions, please feel free to reach out via email at [paithankarprasanna@gmail.com](mailto:paithankarprasanna@gmail.com)
+
+### Man Pages
+
+<!-- references -->
+## References
+
+[1] []()
